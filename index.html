@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C ile Programlama — Sıfırdan Kurs</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">C</div>
+    <div class="brand-text">
+      <h1 id="courseTitle">C ile Programlama</h1>
+      <p id="courseSubtitle">Sıfırdan, adım adım</p>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="progress-wrap">
+      <span id="progressText">0 / 0 alıştırma</span>
+      <div class="bar"><div id="progressBar"></div></div>
+    </div>
+    <span class="pill" id="gccStatus">gcc aranıyor…</span>
+  </div>
+</header>
+
+<main class="layout">
+
+  <nav class="lessons">
+    <div class="lessons-title">Dersler</div>
+    <ul id="lessonList"></ul>
+    <button class="reset-progress" id="btnResetProgress">İlerlemeyi sıfırla</button>
+  </nav>
+
+  <section class="content" id="content" aria-live="polite"></section>
+
+  <aside class="editor-pane">
+    <div class="editor-head">
+      <span class="file">main.c</span>
+      <span class="mode" id="editorMode">serbest çalışma</span>
+    </div>
+
+    <textarea id="code" spellcheck="false" autocomplete="off" autocorrect="off"
+              autocapitalize="off" wrap="off"></textarea>
+
+    <div class="editor-actions">
+      <button id="btnRun" class="btn primary" title="Ctrl+Enter">▶ Derle ve Çalıştır</button>
+      <button id="btnCheck" class="btn" hidden>✓ Testleri Çalıştır</button>
+      <button id="btnHint" class="btn ghost" hidden>İpucu</button>
+      <button id="btnSolution" class="btn ghost" hidden>Çözüm</button>
+      <button id="btnReset" class="btn ghost">Boşala dön</button>
+      <label class="stdin-row" id="stdinRow" hidden>
+        <span>stdin</span>
+        <input id="stdin" placeholder="Programa verilecek girdi — ör. 5 3">
+      </label>
+    </div>
+
+    <div class="output">
+      <div class="output-head">
+        <span>Çıktı</span>
+        <span id="runMeta"></span>
+      </div>
+      <pre id="out">Kodunu yaz, “Derle ve Çalıştır” düğmesine bas.</pre>
+      <ul id="testResults" class="test-results"></ul>
+    </div>
+  </aside>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
